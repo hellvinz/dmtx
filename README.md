@@ -1,6 +1,6 @@
 # Dmtx
 
-TODO: Write a gem description
+Simple ffi wrapper for libdmtx http://www.libdmtx.org/ to generate qrcodes
 
 ## Installation
 
@@ -18,9 +18,18 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+  require 'dmtx'
+
+  dmtx = Dmtx.new
+  dmtx.text = "hello world"
+  dmtx.file = "./qrcode.png"
+  dmtx.write
+```
 
 ## Contributing
+
+This is a work in progress. If you want to help
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
