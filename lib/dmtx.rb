@@ -1,6 +1,6 @@
 require "dmtx/version"
 require 'chunky_png'
-require 'dmtx/dtmxlib'
+require "dmtx/dmtxlib"
 
 class NoText < StandardError;;end
 class NoFile < StandardError;;end
