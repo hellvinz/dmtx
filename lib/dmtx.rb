@@ -25,7 +25,7 @@ class Dmtx
 
     dmtx_image = DmtxLib::DmtxImage.new(dmtx_encode[:image])
 
-    image = ChunkyPNG::Image.from_rgb_stream(width, height, dmtx_image[:pxl].read_string_length(computed_height*computed_width*3))
+    image = ChunkyPNG::Image.from_rgb_stream(computed_width, computed_height, dmtx_image[:pxl].read_string_length(computed_height*computed_width*3))
     image.save(file, :fast_rgb)
   end
 end
