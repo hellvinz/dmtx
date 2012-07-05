@@ -1,3 +1,3 @@
-module Dmtx
+class Dmtx
   VERSION = "0.0.1"
 end
