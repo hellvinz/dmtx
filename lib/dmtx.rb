@@ -15,8 +15,8 @@ class Dmtx
   end
 
   def write
-    raise NoText, "please provide a text to encode"
-    raise NoFile, "please provide an output file"
+    raise NoText, "please provide a text to encode" unless text
+    raise NoFile, "please provide an output file" unless file
 
     DmtxLib.dmtxEncodeDataMatrix(@enc, text.length, text)
     dmtx_encode = DmtxLib::DmtxEncode.new(@enc)
