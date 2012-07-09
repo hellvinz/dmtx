@@ -4,8 +4,8 @@ require File.expand_path('../lib/dmtx/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Vincent Hellot"]
   gem.email         = ["hellvinz@gmail.com"]
-  gem.description   = %q{ffi wrapper around libdmtx to generate qrcodes}
-  gem.summary       = %q{ffi wrapper around libdmtx to generate qrcodes}
+  gem.description   = %q{ffi wrapper around libdmtx to generate Data Matrix 2D barcodes}
+  gem.summary       = %q{ffi wrapper around libdmtx to generate Data Matrix 2D barcodes (similar to qrcode)}
   gem.homepage      = "https://github.com/hellvinz/dmtx"
 
   gem.files         = `git ls-files`.split($/)

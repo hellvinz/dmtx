@@ -1,6 +1,7 @@
 # Dmtx
 
-Simple ffi wrapper for libdmtx http://www.libdmtx.org/ to generate qrcodes
+Simple ffi wrapper for libdmtx http://www.libdmtx.org/ to generate data matrix (two-dimensional matrix barcodes)
+Data Matrix is a competitor of the Qrcode norm. (http://en.wikipedia.org/wiki/Datamatrix)
 
 ## Installation
 
