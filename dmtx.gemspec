@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.name          = "dmtx"
   gem.require_paths = ["lib"]
   gem.version       = Dmtx::VERSION
-  gem.requirement   = 'libdmtx'
+  gem.requirements  << "libdmtx, v0.7.2 or greater"
   gem.add_dependency "chunky_png"
   gem.add_dependency "ffi"
 end
