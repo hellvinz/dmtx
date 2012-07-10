@@ -8,7 +8,8 @@ class Dmtx
 
   attr_accessor :text, :file
 
-  def initialize
+  def initialize(text = nil)
+    @text = text
     @enc = DmtxLib.dmtxEncodeCreate()
     DmtxLib.dmtxEncodeSetProp(@enc, :DmtxPropPixelPacking, :DmtxPack24bppRGB)
     DmtxLib.dmtxEncodeSetProp(@enc, :DmtxPropSizeRequest, :DmtxSymbolSquareAuto)
