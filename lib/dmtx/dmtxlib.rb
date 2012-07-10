@@ -1,17 +1,17 @@
-require 'ffi'
+require "ffi"
 
 module DmtxLib
   extend FFI::Library
   ffi_lib "dmtx"
-  
+
   enum :DmtxPackOrder, [
-    # Custom format 
+    # Custom format
     :DmtxPackCustom, 100,
-    # 1 bpp 
+    # 1 bpp
     :DmtxPack1bppK, 200,
-    # 8 bpp grayscale 
+    # 8 bpp grayscale
     :DmtxPack8bppK, 300,
-    # 16 bpp formats 
+    # 16 bpp formats
     :DmtxPack16bppRGB, 400,
     :DmtxPack16bppRGBX,
     :DmtxPack16bppXRGB,
@@ -19,32 +19,32 @@ module DmtxLib
     :DmtxPack16bppBGRX,
     :DmtxPack16bppXBGR,
     :DmtxPack16bppYCbCr,
-    # 24 bpp formats 
+    # 24 bpp formats
     :DmtxPack24bppRGB, 500,
     :DmtxPack24bppBGR,
     :DmtxPack24bppYCbCr,
-    # 32 bpp formats 
+    # 32 bpp formats
     :DmtxPack32bppRGBX, 600,
     :DmtxPack32bppXRGB,
     :DmtxPack32bppBGRX,
     :DmtxPack32bppXBGR,
     :DmtxPack32bppCMYK
   ]
-  
+
   enum :DmtxProperty, [
-    #Encoding properties
+    # Encoding properties
     :DmtxPropScheme, 100,
     :DmtxPropSizeRequest,
     :DmtxPropMarginSize,
     :DmtxPropModuleSize,
-    #Decoding properties
+    # Decoding properties
     :DmtxPropEdgeMin, 200,
     :DmtxPropEdgeMax,
     :DmtxPropScanGap,
     :DmtxPropSquareDevn,
     :DmtxPropSymbolSize,
     :DmtxPropEdgeThresh,
-    #Image properties
+    # Image properties
     :DmtxPropWidth, 300,
     :DmtxPropHeight,
     :DmtxPropPixelPacking,
@@ -54,7 +54,7 @@ module DmtxLib
     :DmtxPropRowSizeBytes,
     :DmtxPropImageFlip,
     :DmtxPropChannelCount,
-    #Image modifiers
+    # Image modifiers
     :DmtxPropXmin, 400,
     :DmtxPropXmax,
     :DmtxPropYmin,

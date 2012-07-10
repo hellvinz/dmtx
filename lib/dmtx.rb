@@ -1,12 +1,12 @@
 require "dmtx/version"
-require 'chunky_png'
+require "chunky_png"
 require "dmtx/dmtxlib"
 
 class NoText < StandardError;;end
 class NoFile < StandardError;;end
 
 class Dmtx
-  attr_accessor :text, :height, :width, :file 
+  attr_accessor :text, :height, :width, :file
 
   def initialize
     @enc = DmtxLib.dmtxEncodeCreate()
