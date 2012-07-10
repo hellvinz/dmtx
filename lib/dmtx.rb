@@ -6,7 +6,7 @@ class Dmtx
   NoText = Class.new StandardError
   NoFile = Class.new StandardError
 
-  attr_accessor :text, :height, :width, :file
+  attr_accessor :text, :file
 
   def initialize
     @enc = DmtxLib.dmtxEncodeCreate()
