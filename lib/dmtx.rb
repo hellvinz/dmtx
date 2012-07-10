@@ -2,10 +2,10 @@ require "dmtx/version"
 require "chunky_png"
 require "dmtx/dmtxlib"
 
-class NoText < StandardError;;end
-class NoFile < StandardError;;end
-
 class Dmtx
+  NoText = Class.new StandardError
+  NoFile = Class.new StandardError
+
   attr_accessor :text, :height, :width, :file
 
   def initialize
