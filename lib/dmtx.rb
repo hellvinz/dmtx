@@ -12,6 +12,11 @@ class Dmtx
     @text = text
   end
 
+  def png_data
+    raise NoText, "please provide a text to encode" unless text
+    chunky_png_image.to_blob(:fast_rgb)
+  end
+
   def write
     raise NoText, "please provide a text to encode" unless text
     raise NoFile, "please provide an output file" unless file
