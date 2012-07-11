@@ -7,6 +7,7 @@ class Dmtx
   NoFile = Class.new StandardError
 
   attr_accessor :text, :file
+  attr_accessor :margin_size, :module_size
 
   def initialize(text = nil)
     @text = text
@@ -29,6 +30,8 @@ private
     encoder = DmtxLib.dmtxEncodeCreate()
     DmtxLib.dmtxEncodeSetProp(encoder, :DmtxPropPixelPacking, :DmtxPack24bppRGB)
     DmtxLib.dmtxEncodeSetProp(encoder, :DmtxPropSizeRequest, :DmtxSymbolSquareAuto)
+    DmtxLib.dmtxEncodeSetProp(encoder, :DmtxPropMarginSize, margin_size) if margin_size
+    DmtxLib.dmtxEncodeSetProp(encoder, :DmtxPropModuleSize, module_size) if module_size
 
     DmtxLib.dmtxEncodeDataMatrix(encoder, text.length, text)
     dmtx_encode = DmtxLib::DmtxEncode.new(encoder)
