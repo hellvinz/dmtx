@@ -98,7 +98,7 @@ module DmtxLib
     :DmtxSymbol16x48
   ]
 
-  class DmtxEncode < FFI::Struct
+  class DmtxEncode < FFI::ManagedStruct
     layout :method, :int,
            :scheme, :int,
            :sizeIdxRequest, :int,
@@ -109,6 +109,12 @@ module DmtxLib
            :rowPadBytes, :int,
            :message, :pointer,
            :image, :pointer
+
+    def self.release(ptr)
+      ptr_ptr = FFI::MemoryPointer.new(:pointer)
+      ptr_ptr.write_pointer(ptr)
+      DmtxLib.dmtxEncodeDestroy(ptr_ptr)
+    end
   end
 
   class DmtxImage < FFI::Struct
@@ -127,6 +133,7 @@ module DmtxLib
   end
 
   attach_function :dmtxEncodeCreate, [], :pointer
+  attach_function :dmtxEncodeDestroy, [:pointer], :uint
   attach_function :dmtxEncodeDataMatrix, [:pointer, :int, :string], :uint
   attach_function :dmtxImageGetProp, [:pointer, :int], :uint
   attach_function :dmtxEncodeSetProp, [:pointer, :int, :int], :uint
